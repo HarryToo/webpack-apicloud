@@ -1,0 +1,14 @@
+<%= htmlWebpackPlugin.options.head %>
+<div id="view">
+    <app-header bg="url(<%= require('./bb.jpg')%>) no-repeat top/cover" color="#fff" :border="false">关于</app-header>
+    <app-body>
+        <div class="cont">
+            <p>css图片</p>
+            <div class="bg"></div>
+            <p>html图片</p>
+            <img src="<%= require('./bg.jpg')%>" alt="">
+            <app-button @click.native="showParam">pageParam</app-button>
+        </div>
+    </app-body>
+</div>
+<%= htmlWebpackPlugin.options.foot %>

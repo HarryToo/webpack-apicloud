@@ -1,0 +1,18 @@
+<%= htmlWebpackPlugin.options.head %>
+<div id="view">
+    <app-header :back="false">首页</app-header>
+    <app-body :pulldown="true" @pulldown="getData" :pullup="true" @pullup="loadMore">
+        <div class="content">
+            <app-button @click.native="num++">{{num}}</app-button>
+            <app-button @click.native="openAboutWin">关于</app-button>
+            <app-button @click.native="getData">异步数据</app-button>
+            <ul>
+                <li v-for="item,index in labels" :key="index">
+                    <img :src="item.icon" alt="">
+                    <p>{{item.title}}</p>
+                </li>
+            </ul>
+        </div>
+    </app-body>
+</div>
+<%= htmlWebpackPlugin.options.foot %>

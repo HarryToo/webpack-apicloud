@@ -1,0 +1,17 @@
+.cont {
+  padding: 0 15px;
+  text-align: center;
+  overflow: hidden;
+  .bg{
+    width: 279px;
+    height: 286px;
+    background: url("./bb.jpg") no-repeat center/contain;
+  }
+  p {
+    margin: 5px 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

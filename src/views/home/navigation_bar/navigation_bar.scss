@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+}
+
+ul {
+  height: 50px;
+  display: flex;
+
+  li {
+    height: 100%;
+    padding: 5px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    &.active {
+      .iconfont, span {
+        color: #4aa1ff;
+      }
+    }
+  }
+}

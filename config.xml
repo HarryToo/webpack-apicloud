@@ -1,0 +1,27 @@
+<widget id="A6077509048875" version="0.0.1">
+    <name>HelloApp</name>
+    <description>Example For APICloud.</description>
+    <author email="developer@apicloud.com" href="http://www.apicloud.com">Developer</author>
+    <content src="http://192.168.1.2:8888/index.html"/>
+    <access origin="*"/>
+    <preference name="pageBounce" value="false"/>
+    <preference name="appBackground" value="#f5f5f5"/>
+    <preference name="windowBackground" value="#f5f5f5"/>
+    <preference name="frameBackgroundColor" value="#f5f5f5"/>
+    <preference name="hScrollBarEnabled" value="false"/>
+    <preference name="vScrollBarEnabled" value="false"/>
+    <preference name="autoLaunch" value="true"/>
+    <preference name="fullScreen" value="false"/>
+    <preference name="autoUpdate" value="true"/>
+    <preference name="smartUpdate" value="false"/>
+    <preference name="debug" value="true"/>
+    <preference name="statusBarAppearance" value="true"/>
+    <permission name="readPhoneState"/>
+    <permission name="camera"/>
+    <permission name="record"/>
+    <permission name="location"/>
+    <permission name="fileSystem"/>
+    <permission name="internet"/>
+    <permission name="bootCompleted"/>
+    <permission name="hardware"/>
+</widget>

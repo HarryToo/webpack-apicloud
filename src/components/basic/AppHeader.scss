@@ -1,0 +1,120 @@
+/*标题栏*/
+.aui-bar {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  min-height: 44px;
+  font-size: 18px;
+  text-align: center;
+  display: table;
+}
+
+.aui-bar-nav {
+  top: 0;
+  line-height: 44px;
+  /* background: -webkit-linear-gradient(right,#FF9E2B, #FF8E3C); Safari 5.1 - 6.0
+  background: -o-linear-gradient(right,#FF9E2B, #FF8E3C); Opera 11.1 - 12.0
+  background: -moz-linear-gradient(right,#FF9E2B, #FF8E3C); Firefox 3.6 - 15
+  background: linear-gradient(right,#FF9E2B, #FF8E3C); 标准的语法 */
+  background: #ffffff;
+  color: #333;
+}
+
+.aui-title a {
+  color: inherit;
+}
+
+.aui-bar-nav .aui-title {
+  min-height: 44px;
+  position: absolute;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  right: 100px;
+  left: 100px;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+}
+
+.aui-bar-nav a {
+  color: #333;
+}
+
+.aui-bar-nav .iconfont {
+  font-size: 18px;
+}
+
+.aui-bar-nav .aui-pull-left {
+  float: left;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.aui-bar-nav .aui-pull-right {
+  float: right;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.aui-bar-nav .aui-btn {
+  position: relative;
+  z-index: 20;
+  height: 44px;
+  line-height: 44px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border-radius: 20px;
+  border-width: 0;
+  background: transparent !important;
+}
+
+.aui-bar-nav .aui-btn.aui-btn-outlined {
+  position: relative;
+  padding: 0 3px;
+  margin: 10px;
+  height: 25px;
+  line-height: 25px;
+  border-width: 1px;
+  background: transparent !important;
+  border-color: #ffffff;
+}
+
+.aui-bar-nav .aui-btn:active {
+  background: none;
+}
+
+.aui-bar-nav .aui-btn .aui-iconfont {
+  font-size: 18px;
+  line-height: 25px;
+  padding: 0;
+  margin: 0;
+  color: #333;
+}
+
+.aui-bar-light {
+  color: #03a9f4;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+.aui-bar-nav.aui-bar-light .aui-iconfont {
+  color: #03a9f4;
+}
+
+.aui-bar-nav.aui-bar-light .aui-btn-outlined {
+  border-color: #03a9f4;
+}

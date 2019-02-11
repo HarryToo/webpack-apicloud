@@ -1,0 +1,13 @@
+$button_font_color: #fff;
+$button_bg_color: linear-gradient(to right, #a8d9ff, #5e9eff);
+
+/*块级按钮*/
+.app_button {
+  margin: 20px 0;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 20px;
+  color: $button_font_color;
+  background: $button_bg_color;
+}
