@@ -15,7 +15,7 @@ export default {
             pickerData1: ['撒大苏打','夫士大夫'],
             pickerValue1: '撒大苏打',
             pickerData2: ['大师傅但','第三方的'],
-            pickerValue2: '撒大苏打'
+            pickerValue2: '大师傅但'
         },
         components: {
             AppBody,
