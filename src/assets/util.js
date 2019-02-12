@@ -59,7 +59,22 @@ export const ajax = (url, option) => {
     });
 };
 
-// Vue实例模板(预留接口)
-export const Profile = Vue.extend({
-    
+// 图片缓存指令（开发环境下不启用）
+Vue.directive('cache', function (ele, binding) {
+    if (process.env.NODE_ENV === 'development') {
+        ele.src = binding.value;
+    } else {
+        let url = binding.value;
+        if (url && url.length) {
+            api.imageCache({
+                url: url
+            }, function (ret, err) {
+                if (ret && ret.status) {
+                    ele.src = ret.url;
+                }
+            });
+        }
+    }
 });
+// Vue实例模板（预留接口）
+export const Profile = Vue.extend({});
