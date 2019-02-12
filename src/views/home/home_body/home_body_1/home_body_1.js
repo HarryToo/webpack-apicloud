@@ -4,9 +4,7 @@ import {AppBody, AppHeader, AppButton} from '@/components/basic'
 export default {
     apiready() {
         let header = $api.dom('header');
-        if (header) {
-            $api.fixStatusBar(header);
-        }
+        $api.fixStatusBar(header);
         vm.getData();
     },
     vm: new Vue({
