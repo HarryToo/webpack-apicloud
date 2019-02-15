@@ -25,35 +25,37 @@ export default {
     },
     created() {
         this.$nextTick(() => {
-            if (!this.scroll) {
-                let pullDownRefresh = this.pulldown ? {
-                    threshold: 60,
-                    stop: 60
-                } : false;
-                let pullUpLoad = this.pullup ? {
-                    threshold: 30
-                } : false;
-                this.scroll = new BScroll('main', {
-                    scrollY: true,
-                    click: true,
-                    // preventDefault: false,
-                    bounceTime: 500,
-                    pullDownRefresh,
-                    pullUpLoad
-                });
-                if (this.pulldown) {
-                    this.scroll.on('pullingDown', () => {
-                        this.$emit('pulldown');
+            setTimeout(() => {
+                if (!this.scroll) {
+                    let pullDownRefresh = this.pulldown ? {
+                        threshold: 60,
+                        stop: 60
+                    } : false;
+                    let pullUpLoad = this.pullup ? {
+                        threshold: 30
+                    } : false;
+                    this.scroll = new BScroll('main', {
+                        scrollY: true,
+                        click: true,
+                        // preventDefault: false,
+                        bounceTime: 500,
+                        pullDownRefresh,
+                        pullUpLoad
                     });
+                    if (this.pulldown) {
+                        this.scroll.on('pullingDown', () => {
+                            this.$emit('pulldown');
+                        });
+                    }
+                    if (this.pullup) {
+                        this.scroll.on('pullingUp', () => {
+                            this.$emit('pullup');
+                        });
+                    }
+                } else {
+                    this.scroll.refresh();
                 }
-                if (this.pullup) {
-                    this.scroll.on('pullingUp', () => {
-                        this.$emit('pullup');
-                    });
-                }
-            } else {
-                this.scroll.refresh();
-            }
+            }, 50);
         });
     },
     updated() {
