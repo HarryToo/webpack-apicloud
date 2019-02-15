@@ -12,7 +12,7 @@ export default {
         if (process.env.NODE_ENV === 'development') {
             root = `http://${LOCALHOST}:8888/views/`;
         } else {
-            root = 'widget://dist/views/';
+            root = 'widget://views/';
         }
         return `${root + url}/${file_name}.html`;
     },
