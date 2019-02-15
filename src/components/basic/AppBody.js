@@ -60,7 +60,6 @@ export default {
     },
     updated() {
         let $this = this;
-        this.scroll.refresh();
         if (this.pulldown) {
             this.scroll.finishPullDown();
         }
