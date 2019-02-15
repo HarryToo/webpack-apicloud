@@ -7,7 +7,7 @@
             <app-button @click.native="openAboutWin">关于</app-button>
             <app-button @click.native="getData">异步数据</app-button>
             <ul>
-                <li v-for="item,index in labels" :key="index" @click="alert(index)">
+                <li v-for="item,index in labels" :key="index">
                     <img v-cache="item.icon" alt="">
                     <p>{{item.title}}</p>
                 </li>
