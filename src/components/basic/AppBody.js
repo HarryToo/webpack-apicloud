@@ -38,6 +38,7 @@ export default {
                         scrollY: true,
                         click: true,
                         // preventDefault: false,
+                        bounceTime: 500,
                         pullDownRefresh,
                         pullUpLoad
                     });
