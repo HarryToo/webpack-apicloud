@@ -38,7 +38,7 @@ module.exports = merge(common, {
             clear: false,
             callback() {
                 setTimeout(() => {
-                    console.log('\n\033[42;30m done \033[40;32m ( •̀ ω •́ )y   生产代码构建完成 \033[5m');
+                    console.log('\n\033[42;30m Done \033[40;32m ( •̀ ω •́ )y   生产代码构建完成 \033[5m');
                 }, 500);
             }
         })
