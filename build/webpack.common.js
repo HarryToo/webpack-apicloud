@@ -3,7 +3,6 @@ const glob = require('glob');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 if (!process.stdout.isTTY) {
     process.stdout.isTTY = true;
@@ -107,10 +106,7 @@ module.exports = {
             app: ['@/assets/app.js', 'default'],
             req: ['@/config/req.js', 'default']
         }),
-        ...getHtmlPlugins(),
-        new ProgressBarPlugin({
-            stream: process.stdout
-        })
+        ...getHtmlPlugins()
     ],
     optimization: {
         splitChunks: {

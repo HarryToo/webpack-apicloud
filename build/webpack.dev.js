@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const common = require('./webpack.common.js');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 // 开发环境本地地址
 function getLocalHost() {
@@ -53,6 +54,15 @@ module.exports = merge(common, {
         }),
         new webpack.DefinePlugin({
             'LOCALHOST': JSON.stringify(getLocalHost())
+        }),
+        new ProgressBarPlugin({
+            stream: process.stdout,
+            clear: false,
+            callback: () => {
+                setTimeout(() => {
+                    console.log('\n\033[42;30m running \033[40;32m ( •̀ ω •́ )y   开发服务运行中：http://' + getLocalHost() + ':8888 \033[5m');
+                }, 500);
+            }
         })
     ]
 });
