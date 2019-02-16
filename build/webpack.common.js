@@ -90,10 +90,6 @@ module.exports = {
                     },
                     'sass-loader'
                 ]
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader'
             }
         ]
     },

@@ -34,6 +34,32 @@ module.exports = merge(common, {
             '$vue': 'vue/dist/vue.js'
         }
     },
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10240,
+                            name: '[name].[ext]',
+                            outputPath: (url, resourcePath, context) => {
+                                let path = resourcePath.replace(/\\/g, '/');
+                                let p = path.substring(path.indexOf('src/views') + 10);
+                                return `images/${p}`;
+                            },
+                            publicPath: (url, resourcePath, context) => {
+                                let path = resourcePath.replace(/\\/g, '/');
+                                let p = path.substring(path.indexOf('src/views/') + 10);
+                                return `/script/images/${p}`;
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     devServer: {
         contentBase: [path.resolve(__dirname, '../dist'), path.resolve(__dirname, '../static')],
         compress: true,
@@ -60,7 +86,7 @@ module.exports = merge(common, {
             clear: false,
             callback() {
                 setTimeout(() => {
-                    console.log('\n\033[42;37m Server \033[47;32m ( •̀ ω •́ )y   开发服务运行中：http://' + getLocalHost() + ':8888 \033[0m\n');
+                    console.log('\n\033[42;37m Server \033[47;32m ( •̀ ω •́ )y   开发服务运行中：http://localhost:8888 \033[0m\n');
                 }, 500);
             }
         })

@@ -15,6 +15,37 @@ module.exports = merge(common, {
             '$vue': 'vue/dist/vue.min.js'
         }
     },
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10240,
+                            name: '[name].[ext]',
+                            outputPath: (url, resourcePath, context) => {
+                                let path = resourcePath.replace(/\\/g, '/');
+                                let p = path.substring(path.indexOf('src/views') + 10);
+                                return `../static/images/${p}`;
+                            },
+                            publicPath: (url, resourcePath, context) => {
+                                let path = resourcePath.replace(/\\/g, '/');
+                                let p = path.substring(path.indexOf('src/views/') + 10);
+                                let level = p.match(/\//g).length;
+                                let relative = '';
+                                for (let i = 0; i < level; i++) {
+                                    relative += '../';
+                                }
+                                return `${relative}../static/images/${p}`;
+                            },
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     plugins: [
         new CopyWebpackPlugin([
             {
