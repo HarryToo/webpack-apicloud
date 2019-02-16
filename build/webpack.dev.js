@@ -60,7 +60,7 @@ module.exports = merge(common, {
             clear: false,
             callback() {
                 setTimeout(() => {
-                    console.log('\n\033[42;30m Running \033[40;32m ( •̀ ω •́ )y   开发服务运行中：http://' + getLocalHost() + ':8888 \033[5m');
+                    console.log('\n\033[42;37m Server \033[47;32m ( •̀ ω •́ )y   开发服务运行中：http://' + getLocalHost() + ':8888 \033[0m\n');
                 }, 500);
             }
         })
