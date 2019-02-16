@@ -3,6 +3,17 @@ const glob = require('glob');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+
+if (!process.stdout.isTTY) {
+    process.stdout.isTTY = true;
+    process.stdout.columns = 80;
+    process.stdout.cursorTo = () => {
+        process.stdout.write('\r');
+    };
+    process.stdout.clearLine = () => {
+    };
+}
 
 // entry
 getEntry = () => {
@@ -96,7 +107,10 @@ module.exports = {
             app: ['@/assets/app.js', 'default'],
             req: ['@/config/req.js', 'default']
         }),
-        ...getHtmlPlugins()
+        ...getHtmlPlugins(),
+        new ProgressBarPlugin({
+            stream: process.stdout
+        })
     ],
     optimization: {
         splitChunks: {
