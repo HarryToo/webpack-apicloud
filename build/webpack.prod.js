@@ -36,7 +36,7 @@ module.exports = merge(common, {
         new ProgressBarPlugin({
             stream: process.stdout,
             clear: false,
-            callback: () => {
+            callback() {
                 setTimeout(() => {
                     console.log('\n\033[42;30m done \033[40;32m ( •̀ ω •́ )y   生产代码构建完成 \033[5m');
                 }, 500);

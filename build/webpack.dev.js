@@ -58,7 +58,7 @@ module.exports = merge(common, {
         new ProgressBarPlugin({
             stream: process.stdout,
             clear: false,
-            callback: () => {
+            callback() {
                 setTimeout(() => {
                     console.log('\n\033[42;30m running \033[40;32m ( •̀ ω •́ )y   开发服务运行中：http://' + getLocalHost() + ':8888 \033[5m');
                 }, 500);
