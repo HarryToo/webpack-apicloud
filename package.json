@@ -6,7 +6,7 @@
     "update": "apicloud wifiSync --project ./ --updateAll false --port 8686",
     "updateAll": "apicloud wifiSync --project ./ --updateAll true --port 8686",
     "server": "webpack-dev-server --progress --config build/webpack.dev.js",
-    "build": "webpack --progress --config build/webpack.prod.js && node build/config.xml.handle.js"
+    "build": "webpack --progress --config build/webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

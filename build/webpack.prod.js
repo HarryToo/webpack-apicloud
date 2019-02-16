@@ -2,7 +2,10 @@ const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const StringDecoder = require('string_decoder').StringDecoder;
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+
+const decoder = new StringDecoder('utf8');
 
 module.exports = merge(common, {
     mode: 'production',
@@ -13,8 +16,17 @@ module.exports = merge(common, {
     },
     plugins: [
         new CopyWebpackPlugin([
-            {from: path.join(__dirname, '../static'), to: path.join(__dirname, '../dist/static')},
-            {from: path.join(__dirname, '../config.xml'), to: path.join(__dirname, '../dist/config.xml')}
+            {
+                from: path.join(__dirname, '../static'),
+                to: path.join(__dirname, '../dist/static')
+            },
+            {
+                from: path.join(__dirname, '../config.xml'),
+                to: path.join(__dirname, '../dist/config.xml'),
+                transform(content, path) {
+                    return decoder.write(Buffer.from(content)).replace(/http:\/\/.*:8888\/index.html/, 'index.html');
+                }
+            }
         ]),
         new HtmlWebpackIncludeAssetsPlugin({
             assets: ['../static/script/api.js', '../static/script/autoSize.js', '../static/css/iconfont.css', '../static/css/api.css'],
