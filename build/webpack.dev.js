@@ -44,12 +44,12 @@ module.exports = merge(common, {
                         options: {
                             limit: 10240,
                             name: '[name].[ext]',
-                            outputPath: (url, resourcePath, context) => {
+                            outputPath(url, resourcePath, context) {
                                 let path = resourcePath.replace(/\\/g, '/');
                                 let p = path.substring(path.indexOf('src/views') + 10);
                                 return `images/${p}`;
                             },
-                            publicPath: (url, resourcePath, context) => {
+                            publicPath(url, resourcePath, context) {
                                 let path = resourcePath.replace(/\\/g, '/');
                                 let p = path.substring(path.indexOf('src/views/') + 10);
                                 return `/script/images/${p}`;
