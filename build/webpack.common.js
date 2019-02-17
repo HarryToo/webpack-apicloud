@@ -43,7 +43,7 @@ getHtmlPlugins = () => {
                 template: name,
                 head: `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/><meta name="format-detection" content="telephone=no,email=no,date=no,address=no"><title>${chunk_name}</title></head><body>`,
                 foot: `</body></html>`,
-                chunks: ['fastClick', 'devRefreshBtn', 'vendors', 'reusable', 'commons', chunk_name],
+                chunks: ['fastClick', 'devRefreshBtn', 'vendors', 'commons', chunk_name],
                 filename,
                 alwaysWriteToDisk: true
             })
