@@ -1,5 +1,5 @@
 import './home_body_2.scss'
-import {AppBody, AppHeader, AppButton, AppSwiper, AppSlide} from '@/components/basic'
+import {AppBody, AppHeader, AppButton, AppSwiper, AppSlide, AppRuler} from '@/components/basic'
 
 export default {
     apiready() {
@@ -9,7 +9,7 @@ export default {
     vm: new Vue({
         el: '#view',
         data: {
-            flag: false,
+            rulerValue: 5000,
             pickerData1: ['撒大苏打','夫士大夫'],
             pickerValue1: '撒大苏打',
             pickerData2: ['大师傅但','第三方的'],
@@ -20,11 +20,15 @@ export default {
             AppBody,
             AppButton,
             AppSwiper,
-            AppSlide
+            AppSlide,
+            AppRuler
         },
         methods: {
             test() {
                 app.toast('vue标题栏组件');
+            },
+            rulerChange(e){
+                this.rulerValue = e;
             },
             dialog() {
                 app.alert({
@@ -63,6 +67,9 @@ export default {
                         $this.pickerValue2 = res.value;
                     }
                 });
+            },
+            change(e){
+                console.log(e);
             }
         }
     })

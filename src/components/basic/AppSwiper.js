@@ -48,7 +48,9 @@ export default {
     },
     data() {
         return {
-            swiperOption: {}
+            swiperOption: {
+                speed: 500
+            }
         }
     },
     beforeMount() {
@@ -59,11 +61,10 @@ export default {
         }
         this.swiperOption.loop = this.loop;
         this.swiperOption.autoplay = this.autoPlay;
-        this.swiperOption.initialSlide = this.slideCenter;
+        this.swiperOption.initialSlide = this.slideIndex;
         this.swiperOption.centeredSlides = this.slideCenter;
         this.swiperOption.slidesPerView = this.slideView;
         this.swiperOption.slidesPerGroup = this.slideGroup;
         this.swiperOption.spaceBetween = this.slideSpace;
-        console.log(this.swiperOption);
     }
 };
