@@ -57,7 +57,8 @@ module.exports = merge(common, {
                 from: path.join(__dirname, '../config.xml'),
                 to: path.join(__dirname, '../dist/config.xml'),
                 transform(content, path) {
-                    return decoder.write(Buffer.from(content)).replace(/http:\/\/.*:8888\/index.html/, 'index.html');
+                    return decoder.write(Buffer.from(content)).replace(/http:\/\/.*:8888\/index.html/, 'index.html')
+                        .replace('<preference name="debug" value="true"/>', '<preference name="debug" value="false"/>');
                 }
             }
         ]),
