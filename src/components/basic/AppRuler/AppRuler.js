@@ -16,8 +16,7 @@ export default {
             swiperOption: {
                 slidesPerView: 7,
                 centeredSlides: true
-            },
-            activeIndex: 3
+            }
         }
     },
     props: {
