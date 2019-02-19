@@ -5,12 +5,17 @@
         <i slot="menu" class="iconfont icon-refresh" @click="test"></i>
     </app-header>
     <app-body>
+        <div class="banner">
+            <app-swiper :slide-index="1" :slide-center="true" slide-space="4%" :slide-view="1.2">
+                <app-slide><img src="<%= require('./img1.png') %>" alt=""></app-slide>
+                <app-slide><img src="<%= require('./img1.png') %>" alt=""></app-slide>
+                <app-slide><img src="<%= require('./img1.png') %>" alt=""></app-slide>
+                <app-slide><img src="<%= require('./img1.png') %>" alt=""></app-slide>
+                <app-slide><img src="<%= require('./img1.png') %>" alt=""></app-slide>
+                <app-slide><img src="<%= require('./img1.png') %>" alt=""></app-slide>
+            </app-swiper>
+        </div>
         <div class="content">
-            <p>轮播组件</p>
-            <app-banner :show-dot="true">
-                <img src="<%= require('./img1.png') %>" alt="">
-                <img src="<%= require('./img2.png') %>" alt="">
-            </app-banner>
             <app-button @click.native="dialog">弹窗</app-button>
             <app-button @click.native="picker1">选择器一：{{pickerValue1}}</app-button>
             <app-button @click.native="picker2">选择器二：{{pickerValue2}}</app-button>

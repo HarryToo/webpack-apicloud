@@ -75,6 +75,10 @@ module.exports = {
                 loader: "babel-loader?cacheDirectory"
             },
             {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [

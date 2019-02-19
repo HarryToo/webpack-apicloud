@@ -1,5 +1,5 @@
 import './home_body_2.scss'
-import {AppBody, AppHeader, AppBanner, AppButton} from '@/components/basic'
+import {AppBody, AppHeader, AppButton, AppSwiper, AppSlide} from '@/components/basic'
 
 export default {
     apiready() {
@@ -16,10 +16,11 @@ export default {
             pickerValue2: '大师傅但'
         },
         components: {
-            AppBody,
             AppHeader,
-            AppBanner,
-            AppButton
+            AppBody,
+            AppButton,
+            AppSwiper,
+            AppSlide
         },
         methods: {
             test() {
