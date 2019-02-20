@@ -1,7 +1,0 @@
-dist/
-.svn/
-.idea
-.vscode
-*.iml
-*.bak
-*.log

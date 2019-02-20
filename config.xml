@@ -2,7 +2,7 @@
     <name>HelloApp</name>
     <description>Example For APICloud.</description>
     <author email="developer@apicloud.com" href="http://www.apicloud.com">Developer</author>
-    <content src="http://192.168.1.2:8888/index.html"/>
+    <content src="http://192.168.1.83:8888/index.html"/>
     <access origin="*"/>
     <preference name="pageBounce" value="false"/>
     <preference name="appBackground" value="#f5f5f5"/>
